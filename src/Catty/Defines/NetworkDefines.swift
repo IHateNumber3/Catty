@@ -24,8 +24,16 @@
 class NetworkDefines: NSObject {
 
     // MARK: Base
-    static let shareUrlProduction = "https://share.catrob.at/"
-    static let shareUrlTesting = "https://web-test.catrob.at/"
+    // NOTE: share.catrob.at was officially shut down (project hosting discontinued,
+    // see https://catrobat.org/share/). The community site moved to share.catrobat.org,
+    // with all app routes now living under a "/pocketcode/" path segment instead of
+    // the old "/app/" segment (confirmed working: share.catrobat.org/pocketcode/termsOfUse,
+    // /pocketcode/login, /pocketcode/projects, /pocketcode/media-library/, etc).
+    // The exact /api/... paths below are carried over unchanged and NOT independently
+    // verified against the new backend — if login/upload/browse calls start failing,
+    // that's the first place to check.
+    static let shareUrlProduction = "https://share.catrobat.org/pocketcode/"
+    static let shareUrlTesting = "https://share.catrobat.org/pocketcode/"
 
     static var shareUrl: String {
         #if DEBUG
@@ -46,8 +54,8 @@ class NetworkDefines: NSObject {
     static let aboutCatrobatUrl = "https://catrobat.org"
     static let helpUrl = "https://catrob.at/help"
     static let sourceCodeLicenseUrl = "https://developer.catrobat.org/licenses"
-    static let termsOfUseUrl = shareUrl.appending("app/termsOfUse")
-    static let resetPasswordUrl = shareUrl.appending("app/reset-password")
+    static let termsOfUseUrl = shareUrl.appending("termsOfUse")
+    static let resetPasswordUrl = shareUrl.appending("reset-password")
 
     // MARK: API
 
