@@ -1,5 +1,5 @@
 
-Catty (Pocket Code for iOS)
+Catty
 =====
 [![](https://jenkins.catrob.at/buildStatus/icon?job=Catty%2Fdevelop)](https://jenkins.catrob.at/job/Catty/job/develop/) ![](https://img.shields.io/github/release/catrobat/catty.svg) ![](https://img.shields.io/github/languages/top/catrobat/catty.svg)
 
