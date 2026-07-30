@@ -42,17 +42,36 @@ jobs:
             CODE_SIGNING_ENTITLEMENTS="" \
             DEVELOPMENT_TEAM="" \
             PROVISIONING_PROFILE_SPECIFIER="" \
-            | xcpretty || true
+            2>&1 | tee xcodebuild.log | xcpretty
+          # Fail the step for real if xcodebuild failed, don't swallow the error
+          exit ${PIPESTATUS[0]}
 
-      - name: Locate built .app
+      - name: Upload full build log (always, even on failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: src/xcodebuild.log
+          retention-days: 14
+
+      - name: Locate built .app and verify it has a real binary
         working-directory: src
         run: |
           APP_PATH=$(find build/Build/Products -maxdepth 2 -iname "*.app" -print -quit)
           echo "Found app at: $APP_PATH"
           if [ -z "$APP_PATH" ]; then
-            echo "No .app found — build failed. See log above."
+            echo "No .app found — build failed. See xcodebuild.log artifact."
             exit 1
           fi
+          BIN_NAME=$(basename "$APP_PATH" .app)
+          if [ ! -f "$APP_PATH/$BIN_NAME" ]; then
+            echo "App bundle exists but has no executable ($APP_PATH/$BIN_NAME missing)."
+            echo "This means the build failed partway through. See xcodebuild.log artifact."
+            ls -la "$APP_PATH"
+            exit 1
+          fi
+          echo "Executable found, size:"
+          du -h "$APP_PATH/$BIN_NAME"
           echo "APP_PATH=$APP_PATH" >> $GITHUB_ENV
 
       - name: Package IPA (Payload zip, unsigned)
