@@ -205,6 +205,7 @@
 #define kLocalizedDeleteThisSound NSLocalizedString(@"Delete this sound", nil)
 #define kLocalizedCopyProject NSLocalizedString(@"Copy project", nil)
 #define kLocalizedRenameProject NSLocalizedString(@"Rename project", nil)
+#define kLocalizedExportProject NSLocalizedString(@"Export project", nil)
 #define kLocalizedSetDescription NSLocalizedString(@"Set description", nil)
 #define kLocalizedPocketCodeForIOS NSLocalizedString(@"Pocket Code for iOS", nil)
 #define kLocalizedProjectName NSLocalizedString(@"Project name", nil)

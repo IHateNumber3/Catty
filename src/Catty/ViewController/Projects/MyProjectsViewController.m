@@ -213,6 +213,53 @@
     [self hideLoadingView];
 }
 
+- (void)exportProjectWithLoadingInfo:(ProjectLoadingInfo*)projectLoadingInfo
+                  fromCellAtIndexPath:(NSIndexPath*)indexPath
+{
+    [self showLoadingView];
+
+    // Zipping can take a moment for larger projects, keep the UI responsive.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        Project *project = [Project projectWithLoadingInfo:projectLoadingInfo];
+        NSData *zipData = [[CBFileManager sharedManager] zipProject:project];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self hideLoadingView];
+
+            if (! zipData) {
+                [Util alertWithText:kLocalizedUnableToLoadProject];
+                return;
+            }
+
+            NSString *safeFileName = [projectLoadingInfo.visibleName stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+            NSString *fileName = [NSString stringWithFormat:@"%@.catrobat", safeFileName];
+            NSURL *exportURL = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:fileName];
+
+            NSError *writeError = nil;
+            [zipData writeToURL:exportURL options:NSDataWritingAtomic error:&writeError];
+            if (writeError) {
+                [Util alertWithText:kLocalizedUnableToLoadProject];
+                return;
+            }
+
+            UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[exportURL]
+                                                                                                    applicationActivities:nil];
+            activityViewController.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+                // Clean up the temporary export file once the share sheet is dismissed.
+                [[NSFileManager defaultManager] removeItemAtURL:exportURL error:nil];
+            };
+
+            if (activityViewController.popoverPresentationController) {
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                activityViewController.popoverPresentationController.sourceView = self.tableView;
+                activityViewController.popoverPresentationController.sourceRect = cell ? cell.frame : self.tableView.bounds;
+            }
+
+            [self presentViewController:activityViewController animated:YES completion:nil];
+        });
+    });
+}
+
 - (void)confirmDeleteSelectedProjectsAction:(id)sender
 {
     NSArray *selectedRowsIndexPaths = [self.tableView indexPathsForSelectedRows];
@@ -375,7 +422,7 @@
         NSArray *sectionInfos = [self.projectLoadingInfoDict objectForKey:[[sectionTitle substringToIndex:1] uppercaseString]];
         ProjectLoadingInfo *info = sectionInfos[indexPath.row];
         
-        [[[[[[[[AlertControllerBuilder actionSheetWithTitle:kLocalizedEditProject]
+        [[[[[[[[[AlertControllerBuilder actionSheetWithTitle:kLocalizedEditProject]
          addCancelActionWithTitle:kLocalizedCancel handler:nil]
          addDefaultActionWithTitle:kLocalizedCopy handler:^{
              [Util askUserForUniqueNameAndPerformAction:@selector(copyProjectActionForProjectWithName:
@@ -407,6 +454,9 @@
                                          maxInputLength:kMaxNumOfProjectNameCharacters
                                invalidInputAlertMessage:kLocalizedProjectNameAlreadyExistsDescription
                                           existingNames:unavailableNames];
+         }]
+         addDefaultActionWithTitle:kLocalizedExportProject handler:^{
+             [self exportProjectWithLoadingInfo:info fromCellAtIndexPath:indexPath];
          }]
          addDefaultActionWithTitle:kLocalizedDescription handler:^{
              Project *project = [Project projectWithLoadingInfo:info];
