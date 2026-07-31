@@ -69,7 +69,12 @@ class NetworkDefines: NSObject {
     static let apiEndpointMediaPackageLooks = apiEndpointMediaPackage.appending("/Looks")
     static let apiEndpointMediaPackageSounds = apiEndpointMediaPackage.appending("/Sounds")
 
-    static let apiEndpointProject = apiBaseUrl.appending("project")
+    // NOTE: was apiBaseUrl.appending("project") (singular). The confirmed-working list
+    // endpoints all live under the plural "/api/projects/..." namespace on the new
+    // Catroweb backend (share.catrobat.org), so the single-project lookup very likely
+    // moved there too. Not independently confirmed against a live project ID — if
+    // project detail fetches still fail, this is the next thing to check.
+    static let apiEndpointProject = apiBaseUrl.appending("projects")
     static let apiEndpointProjects = apiBaseUrl.appending("projects")
     static let apiEndpointProjectsFeatured = apiEndpointProjects.appending("/featured")
     static let apiEndpointProjectsSearch = apiEndpointProjects.appending("/search")
