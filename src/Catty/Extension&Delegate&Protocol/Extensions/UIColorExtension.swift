@@ -151,11 +151,17 @@ extension UIColor {
     }
 
     static var whiteGray: UIColor {
-        UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
+        if #available(iOS 13.0, *) {
+            return .secondarySystemBackground
+        }
+        return UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
     }
 
     static var textViewBorderGray: UIColor {
-        UIColor(red: 225.0 / 255.0, green: 225.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
+        if #available(iOS 13.0, *) {
+            return .systemGray4
+        }
+        return UIColor(red: 225.0 / 255.0, green: 225.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
     }
 
     static var destructive: UIColor {
@@ -177,12 +183,10 @@ extension UIColor {
     }
 
     static var navTint: UIColor {
-        /* WORK IN PROGRESS: Dark mode
-        if #available(iOS 13.0, *) {
-            if UITraitCollection.current.userInterfaceStyle == .dark {
-                return self.dark
-            }
-        }*/
+        // Intentionally constant in both light and dark mode: navBar/toolBar/tabBar
+        // keep the brand teal color in both themes (see navBar below), so the pale
+        // tint used for icons/text on top of it stays correct regardless of system
+        // appearance.
         self.light
     }
 
@@ -219,13 +223,10 @@ extension UIColor {
     }
 
     static var textTint: UIColor {
-        /* WORK IN PROGRESS: Dark mode
         if #available(iOS 13.0, *) {
-            if UITraitCollection.current.userInterfaceStyle == .dark {
-                return self.light
-            }
-        }*/
-        self.dark
+            return .label
+        }
+        return self.dark
     }
 
     static var pageIndicator: UIColor {
@@ -242,9 +243,7 @@ extension UIColor {
 
     static var background: UIColor {
         if #available(iOS 13.0, *) {
-            if UITraitCollection.current.userInterfaceStyle == .dark {
-                return self.black
-            }
+            return .systemBackground
         }
         return self.white
     }
