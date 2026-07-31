@@ -57,7 +57,7 @@ jobs:
           set -o pipefail
           xcodebuild build \
             -project Catty.xcodeproj \
-            -scheme "Catty (DEBUG)" \
+            -scheme "Catty (RELEASE)" \
             -sdk iphoneos \
             -configuration Debug \
             -destination "generic/platform=iOS" \
