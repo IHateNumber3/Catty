@@ -29,7 +29,8 @@ class HelpWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
     private var refreshButton: UIBarButtonItem?
     private var stopButton: UIBarButtonItem?
     private var topViewController: UIViewController?
-    private var url: URL?
+    @objc var url: URL?
+    @objc var pageTitle: String?
     private var touchHelperView: UIView?
     private var loadingView: LoadingView?
     private var webView: WKWebView?
@@ -59,7 +60,7 @@ class HelpWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
         viewForWebView.addConstraint(NSLayoutConstraint(item: webView, attribute: .top, relatedBy: .equal, toItem: viewForWebView, attribute: .top, multiplier: 1.0, constant: 0.0))
         viewForWebView.addConstraint(NSLayoutConstraint(item: webView, attribute: .bottom, relatedBy: .equal, toItem: viewForWebView, attribute: .bottom, multiplier: 1.0, constant: 0.0))
 
-        title = kLocalizedHelp
+        title = pageTitle ?? kLocalizedHelp
 
         setupToolBar()
 
@@ -80,7 +81,9 @@ class HelpWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
         webView.addGestureRecognizer(swipeLeftRecognizer)
         webView.addGestureRecognizer(swipeRightRecognizer)
 
-        url = URL(string: NetworkDefines.helpUrl)
+        if url == nil {
+            url = URL(string: NetworkDefines.helpUrl)
+        }
         webView.scrollView.delegate = self
         webView.uiDelegate = self
         webView.backgroundColor = UIColor.background
