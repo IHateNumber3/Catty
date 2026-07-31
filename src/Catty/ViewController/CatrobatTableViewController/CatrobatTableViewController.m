@@ -266,9 +266,13 @@ NS_ENUM(NSInteger, ViewControllerIndex) {
         case kLocalProjectsVC:
             segueIdentifier = kSegueToProjects;
             break;
-        case kExploreVC:
-            segueIdentifier = kSegueToExplore;
+        case kExploreVC: {
+            HelpWebViewController *communityWebVC = [HelpWebViewController new];
+            communityWebVC.url = [NSURL URLWithString:@"https://share.catrobat.org/app/"];
+            communityWebVC.pageTitle = kLocalizedCatrobatCommunity;
+            [self.navigationController pushViewController:communityWebVC animated:YES];
             break;
+        }
         case kHelpVC:
             segueIdentifier = kSegueToHelp;
             break;
