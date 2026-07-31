@@ -132,6 +132,7 @@
 		229DC44A25D698FF00BA9AA2 /* StoreProjectDownloaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229DC44925D698FF00BA9AA2 /* StoreProjectDownloaderError.swift */; };
 		229DC44F25D69A2D00BA9AA2 /* ProjectFetchFailureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229DC44E25D69A2D00BA9AA2 /* ProjectFetchFailureInfo.swift */; };
 		22BEC60425CAD86500AFE1C3 /* StoreFeaturedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BEC60325CAD86500AFE1C3 /* StoreFeaturedProject.swift */; };
+		A10E63ACB0299C825010F4CA /* PaginatedProjectsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB7E8ABA28DFD3D3CA3854 /* PaginatedProjectsResponse.swift */; };
 		22C48768240FFAA3003CB222 /* BrickCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C48767240FFAA3003CB222 /* BrickCellTests.swift */; };
 		2D010F4822240C9F00CAAA06 /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D010F4722240C9F00CAAA06 /* XCUIElementExtension.swift */; };
 		2D227D94220B38E0008A2BC9 /* ScenePresenterVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D227D93220B38E0008A2BC9 /* ScenePresenterVCTests.swift */; };
@@ -2299,6 +2300,7 @@
 		229DC44925D698FF00BA9AA2 /* StoreProjectDownloaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProjectDownloaderError.swift; sourceTree = "<group>"; };
 		229DC44E25D69A2D00BA9AA2 /* ProjectFetchFailureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetchFailureInfo.swift; sourceTree = "<group>"; };
 		22BEC60325CAD86500AFE1C3 /* StoreFeaturedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreFeaturedProject.swift; sourceTree = "<group>"; };
+		89FB7E8ABA28DFD3D3CA3854 /* PaginatedProjectsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedProjectsResponse.swift; sourceTree = "<group>"; };
 		22C48767240FFAA3003CB222 /* BrickCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickCellTests.swift; sourceTree = "<group>"; };
 		232DAAC73BFD01550ECFD889 /* sk */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B9E6447F112720F0F74D139 /* tw */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = tw; path = tw.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -7598,6 +7600,7 @@
 				E4E5599620FCD6AD004B4A08 /* StoreProject.swift */,
 				7B37462329ACEACC0085A90D /* StoreProjectTag.swift */,
 				22BEC60325CAD86500AFE1C3 /* StoreFeaturedProject.swift */,
+				89FB7E8ABA28DFD3D3CA3854 /* PaginatedProjectsResponse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -13440,6 +13443,7 @@
 				92FF2E9A1A24C7D800093DA7 /* NavigationController.m in Sources */,
 				AA74F0A51BC05FCE00D1E954 /* NoteBrickCell.m in Sources */,
 				22BEC60425CAD86500AFE1C3 /* StoreFeaturedProject.swift in Sources */,
+				A10E63ACB0299C825010F4CA /* PaginatedProjectsResponse.swift in Sources */,
 				49949B3E2806EAD20073BF65 /* RightElbowXSensor.swift in Sources */,
 				49402BBF28118354009FCBF8 /* RightMiddleFingerKnuckleXSensor.swift in Sources */,
 				AA74EF521BC0586F00D1E954 /* MoveNStepsBrick+CBXMLHandler.m in Sources */,
@@ -14513,7 +14517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.22 (Modified);
+				MARKETING_VERSION = 0.6.22;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lxml2",
@@ -14557,7 +14561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.22 (Modified);
+				MARKETING_VERSION = 0.6.22;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
