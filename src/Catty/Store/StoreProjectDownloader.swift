@@ -91,7 +91,7 @@ class StoreProjectDownloader: NSObject, StoreProjectDownloaderProtocol {
                 }
                 let items: [StoreProject]?
                 do {
-                    items = try JSONDecoder().decode([StoreProject].self, from: data)
+                    items = try JSONDecoder().decode(PaginatedProjectsResponse<StoreProject>.self, from: data).data
                 } catch {
                     let searchErrorInfo = ProjectFetchFailureInfo(url: indexURL.absoluteString, statusCode: response.statusCode, description: error.localizedDescription, projectName: searchTerm)
 
@@ -158,7 +158,7 @@ class StoreProjectDownloader: NSObject, StoreProjectDownloaderProtocol {
                 }
                 let items: [StoreProject]?
                 do {
-                    items = try JSONDecoder().decode([StoreProject].self, from: data)
+                    items = try JSONDecoder().decode(PaginatedProjectsResponse<StoreProject>.self, from: data).data
                 } catch {
                     let errorInfo = ProjectFetchFailureInfo(type: type, url: url.absoluteString, statusCode: response.statusCode, description: error.localizedDescription)
 
@@ -218,7 +218,7 @@ class StoreProjectDownloader: NSObject, StoreProjectDownloaderProtocol {
                 }
                 let items: [StoreFeaturedProject]?
                 do {
-                    items = try JSONDecoder().decode([StoreFeaturedProject].self, from: data)
+                    items = try JSONDecoder().decode(PaginatedProjectsResponse<StoreFeaturedProject>.self, from: data).data
                 } catch {
                     let errorInfo = ProjectFetchFailureInfo(url: url.absoluteString, statusCode: response.statusCode, description: error.localizedDescription)
 
@@ -256,7 +256,13 @@ class StoreProjectDownloader: NSObject, StoreProjectDownloaderProtocol {
 
                 let project: StoreProject?
                 do {
-                    project = try JSONDecoder().decode(StoreProject.self, from: data)
+                    // Try the wrapped shape first ({"data": {...}}, matching the list
+                    // endpoints), fall back to a bare object if that's what comes back.
+                    if let wrapped = try? JSONDecoder().decode(SingleProjectResponse<StoreProject>.self, from: data) {
+                        project = wrapped.data
+                    } else {
+                        project = try JSONDecoder().decode(StoreProject.self, from: data)
+                    }
                 } catch {
                     return (nil, .parse(error: error))
                 }
