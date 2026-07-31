@@ -23,7 +23,7 @@ jobs:
 
       - name: Resolve Swift Package dependencies
         working-directory: src
-        run: xcodebuild -resolvePackageDependencies -project Catty.xcodeproj -scheme "Catty (DEBUG)"
+        run: xcodebuild -resolvePackageDependencies -project Catty.xcodeproj -scheme "Catty (RELEASE)"
 
       - name: Neutralize outdated license-year precompile check
         working-directory: src
@@ -59,7 +59,7 @@ jobs:
             -project Catty.xcodeproj \
             -scheme "Catty (RELEASE)" \
             -sdk iphoneos \
-            -configuration Debug \
+            -configuration Release \
             -destination "generic/platform=iOS" \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
@@ -119,5 +119,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Catty-scenes-app
-          path: src/build/Build/Products/Debug-iphoneos/*.app
+          path: src/build/Build/Products/Release-iphoneos/*.app
           retention-days: 14
