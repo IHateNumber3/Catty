@@ -52,6 +52,7 @@ class FormTableViewController: UITableViewController {
         tableView.register(FormTextFieldTableViewCell.self, forCellReuseIdentifier: FormTextFieldTableViewCell.id)
         tableView.register(FormCheckTableViewCell.self, forCellReuseIdentifier: FormCheckTableViewCell.id)
         tableView.register(FormVersionTableViewCell.self, forCellReuseIdentifier: FormVersionTableViewCell.id)
+        tableView.register(FormDetailValueTableViewCell.self, forCellReuseIdentifier: FormDetailValueTableViewCell.id)
     }
 
     // MARK: - TableView

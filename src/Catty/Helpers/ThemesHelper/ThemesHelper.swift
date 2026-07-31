@@ -20,8 +20,50 @@
  *  along with this program.  If not, see http://www.gnu.org/licenses/.
  */
 
+@objc enum AppTheme: Int {
+    case system = 0
+    case light = 1
+    case dark = 2
+
+    var localizedTitle: String {
+        switch self {
+        case .system: return kLocalizedThemeSystem
+        case .light: return kLocalizedThemeLight
+        case .dark: return kLocalizedThemeDark
+        }
+    }
+
+    @available(iOS 13.0, *)
+    var interfaceStyle: UIUserInterfaceStyle {
+        switch self {
+        case .system: return .unspecified
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+}
+
 @objc
 class ThemesHelper: NSObject {
+
+    @objc static var currentTheme: AppTheme {
+        get {
+            let rawValue = UserDefaults.standard.integer(forKey: kAppTheme)
+            return AppTheme(rawValue: rawValue) ?? .system
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: kAppTheme)
+            applyCurrentTheme()
+        }
+    }
+
+    @objc static func applyCurrentTheme() {
+        guard #available(iOS 13.0, *) else { return }
+
+        let style = currentTheme.interfaceStyle
+        UIApplication.shared.windows.forEach { $0.overrideUserInterfaceStyle = style }
+    }
+
     @objc static func changeAppearance() {
         UITextField.appearance().keyboardAppearance = UIKeyboardAppearance.default
 
@@ -32,5 +74,7 @@ class ThemesHelper: NSObject {
         }
 
         UINavigationBar.appearance(whenContainedInInstancesOf: [UIDocumentBrowserViewController.self]).tintColor = UIColor.navBar
+
+        applyCurrentTheme()
     }
 }

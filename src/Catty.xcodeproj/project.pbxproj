@@ -1799,6 +1799,7 @@
 		BAEE49BE1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEE49BD1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m */; };
 		BAEE49C01F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE49BF1F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift */; };
 		BB2B31612811B4FF00C4ED45 /* FormVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2B315E2811B4FF00C4ED45 /* FormVersionTableViewCell.swift */; };
+		B624F10E915A1DF57927430B /* FormDetailValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FAC31FA918CFC264F38330 /* FormDetailValueTableViewCell.swift */; };
 		BB2B316328122DEA00C4ED45 /* FormArduinoSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2B316228122DE900C4ED45 /* FormArduinoSwitchTableViewCell.swift */; };
 		BB6FE23A2812AED2007ABDA9 /* FormEmbroiderySwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FE2372812AED2007ABDA9 /* FormEmbroiderySwitchTableViewCell.swift */; };
 		BB6FE23C2812BD4E007ABDA9 /* FormCrashReportsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6FE23B2812BD4E007ABDA9 /* FormCrashReportsSwitchTableViewCell.swift */; };
@@ -4491,6 +4492,7 @@
 		BAEE49BD1F165CBA00F06741 /* ReplaceItemInUserListBrick+CBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ReplaceItemInUserListBrick+CBXMLHandler.m"; path = "Catty/XML/XMLHandler/Bricks/Data/ReplaceItemInUserListBrick+CBXMLHandler.m"; sourceTree = SOURCE_ROOT; };
 		BAEE49BF1F165D1300F06741 /* ReplaceItemInUserListBrick+Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ReplaceItemInUserListBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/ReplaceItemInUserListBrick+Instruction.swift"; sourceTree = "<group>"; };
 		BB2B315E2811B4FF00C4ED45 /* FormVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVersionTableViewCell.swift; sourceTree = "<group>"; };
+		B1FAC31FA918CFC264F38330 /* FormDetailValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDetailValueTableViewCell.swift; sourceTree = "<group>"; };
 		BB2B316228122DE900C4ED45 /* FormArduinoSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormArduinoSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		BB6FE2372812AED2007ABDA9 /* FormEmbroiderySwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEmbroiderySwitchTableViewCell.swift; sourceTree = "<group>"; };
 		BB6FE23B2812BD4E007ABDA9 /* FormCrashReportsSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCrashReportsSwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -11016,6 +11018,7 @@
 				BB6FE245281457E8007ABDA9 /* FormPhiroSwitchTableViewCell.swift */,
 				BB6FE23B2812BD4E007ABDA9 /* FormCrashReportsSwitchTableViewCell.swift */,
 				BB2B315E2811B4FF00C4ED45 /* FormVersionTableViewCell.swift */,
+				B1FAC31FA918CFC264F38330 /* FormDetailValueTableViewCell.swift */,
 				BB9EC0DF27D62CBA009FF8CE /* FormTextFieldTableViewCell.swift */,
 				BB9EC0DD27D62CBA009FF8CE /* FormTableViewController.swift */,
 				BB6FE23F2812DC62007ABDA9 /* FormTableViewHeaderView.swift */,
@@ -13608,6 +13611,7 @@
 				F4201CF220D795DB0030181B /* DateWeekdaySensor.swift in Sources */,
 				4CB4FE061B95DF2900431757 /* BrickInsertManager.m in Sources */,
 				BB2B31612811B4FF00C4ED45 /* FormVersionTableViewCell.swift in Sources */,
+				B624F10E915A1DF57927430B /* FormDetailValueTableViewCell.swift in Sources */,
 				49402BB7281181D8009FCBF8 /* RightIndexKnuckleYSensor.swift in Sources */,
 				49402BC128118354009FCBF8 /* RightRingFingerKnuckleYSensor.swift in Sources */,
 				4CAB933B2132753A00AEB86D /* FormulaManager.swift in Sources */,

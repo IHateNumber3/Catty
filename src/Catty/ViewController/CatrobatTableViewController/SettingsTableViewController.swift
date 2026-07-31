@@ -91,6 +91,9 @@ import Foundation
                 })
             ],
             [
+                FormDetailValueItem(title: kLocalizedTheme, valueText: ThemesHelper.currentTheme.localizedTitle, action: {
+                    self.showThemePicker()
+                }),
                 FormVersionItem(),
                 FormItem(title: kLocalizedTermsOfUse, accessoryType: .disclosureIndicator, action: {
                     self.showTermsOfUseAndService()
@@ -182,6 +185,27 @@ import Foundation
     private func removeKnownBluetoothDevices() {
         BluetoothService.sharedInstance().removeKnownDevices()
         Util.alert(text: kLocalizedRemovedKnownBluetoothDevices)
+    }
+
+    private func showThemePicker() {
+        AlertControllerBuilder.actionSheet(title: kLocalizedTheme)
+            .addDefaultAction(title: AppTheme.system.localizedTitle) {
+                self.selectTheme(.system)
+            }
+            .addDefaultAction(title: AppTheme.light.localizedTitle) {
+                self.selectTheme(.light)
+            }
+            .addDefaultAction(title: AppTheme.dark.localizedTitle) {
+                self.selectTheme(.dark)
+            }
+            .addCancelAction(title: kLocalizedCancel, handler: nil)
+            .build()
+            .showWithController(self)
+    }
+
+    private func selectTheme(_ theme: AppTheme) {
+        ThemesHelper.currentTheme = theme
+        setupFormItems()
     }
 
     private func openRateUsURL() {

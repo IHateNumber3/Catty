@@ -116,3 +116,14 @@ class FormVersionItem: FormItem {
         self.cellType = FormVersionTableViewCell.self
     }
 }
+
+class FormDetailValueItem: FormItem {
+    var valueText: String?
+
+    init(title: String? = nil, valueText: String? = nil, action: (() -> Void)? = nil) {
+        super.init(title: title, accessoryType: .disclosureIndicator, action: action)
+
+        self.valueText = valueText
+        self.cellType = FormDetailValueTableViewCell.self
+    }
+}

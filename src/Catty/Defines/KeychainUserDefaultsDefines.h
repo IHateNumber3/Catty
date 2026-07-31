@@ -32,6 +32,8 @@
 
 #define kKnownBluetoothDevices @"KnownBluetoothDevices"
 
+#define kAppTheme @"appTheme"
+
 #define kPhiroActivated 0
 #define kArduinoActivated 1
 #define kEmbroideryActivated 1
