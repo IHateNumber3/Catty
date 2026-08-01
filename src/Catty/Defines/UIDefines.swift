@@ -91,6 +91,7 @@ class UIDefines: NSObject {
     @objc static let brickHeight1h = CGFloat(55.9)
     @objc static let brickHeight2h = CGFloat(75.9)
     @objc static let brickHeight3h = CGFloat(98.9)
+    @objc static let brickHeight4h = CGFloat(121.9)
     @objc static let brickHeightControl1h = CGFloat(72.4)
     @objc static let brickHeightControl2h = CGFloat(99.4)
 

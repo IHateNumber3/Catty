@@ -27,13 +27,17 @@ public class WebRequestDownloader: NSObject {
     private var data = Data()
     private var task: URLSessionDataTask?
     private var url = String()
+    private var httpMethod = "GET"
+    private var httpBody: String?
     var session: URLSession?
 
-    required init(url: String, session: URLSession?, trustedDomainManager: TrustedDomainManager?) {
+    required init(url: String, session: URLSession?, trustedDomainManager: TrustedDomainManager?, httpMethod: String = "GET", httpBody: String? = nil) {
         super.init()
         self.url = url
         self.session = session != nil ? session : self.defaultSession()
         self.trustedDomains = trustedDomainManager != nil ? trustedDomainManager : TrustedDomainManager()
+        self.httpMethod = httpMethod
+        self.httpBody = httpBody
     }
 
     private func defaultSession() -> URLSession {
@@ -54,8 +58,15 @@ public class WebRequestDownloader: NSObject {
             return
         }
 
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        if let httpBody = httpBody, httpMethod != "GET" {
+            request.httpBody = httpBody.data(using: .utf8)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+
         WebRequestDownloader.semaphore.wait()
-        task = session?.dataTask(with: url)
+        task = session?.dataTask(with: request)
         task?.resume()
     }
 }

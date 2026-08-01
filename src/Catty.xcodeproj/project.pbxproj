@@ -154,9 +154,13 @@
 		2EB9FAF226995FF500DBC4FB /* TrustedDomainTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9FAF026995F7100DBC4FB /* TrustedDomainTableViewControllerTests.swift */; };
 		2EB9FAF4269967FF00DBC4FB /* TrustedDomainTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB9FAF3269967FF00DBC4FB /* TrustedDomainTVCTests.swift */; };
 		2EBD8456253FEDD4009BFED5 /* WebRequestBrick+CBXMLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD8455253FEDD4009BFED5 /* WebRequestBrick+CBXMLHandler.swift */; };
+		717E8AFCF516FE794D947AC6 /* WebPostRequestBrick+CBXMLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF527B7BBC2A798554E570 /* WebPostRequestBrick+CBXMLHandler.swift */; };
 		2EBD845B253FEEA1009BFED5 /* WebRequestBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD845A253FEEA1009BFED5 /* WebRequestBrick.swift */; };
+		26CE5B078B568CAABBF73A7F /* WebPostRequestBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23428BBB31F352F5AFC17F3 /* WebPostRequestBrick.swift */; };
 		2EBD845D253FEF57009BFED5 /* WebRequestBrickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD845C253FEF57009BFED5 /* WebRequestBrickCell.swift */; };
+		0A9599FF797B35DA72AE8945 /* WebPostRequestBrickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973DED2B7AD19921BC3D4D2D /* WebPostRequestBrickCell.swift */; };
 		2EBD845F253FEFB6009BFED5 /* WebRequestBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBD845E253FEFB6009BFED5 /* WebRequestBrick+Instruction.swift */; };
+		AC9F299D27E10E6C3E085A7E /* WebPostRequestBrick+Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8C1CB30B47181B8BF8EF4C /* WebPostRequestBrick+Instruction.swift */; };
 		2ED417AE241120AF00AFE2FD /* Tic_Tac_Toe_Master_097.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED416A6241120AE00AFE2FD /* Tic_Tac_Toe_Master_097.xml */; };
 		2ED417AF241120AF00AFE2FD /* Tic_Tac_Toe_Master_096.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED416A7241120AE00AFE2FD /* Tic_Tac_Toe_Master_096.xml */; };
 		2ED417B0241120AF00AFE2FD /* Tic_Tac_Toe_Master_095.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED416A8241120AE00AFE2FD /* Tic_Tac_Toe_Master_095.xml */; };
@@ -2325,9 +2329,13 @@
 		2EB9FAF026995F7100DBC4FB /* TrustedDomainTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDomainTableViewControllerTests.swift; sourceTree = "<group>"; };
 		2EB9FAF3269967FF00DBC4FB /* TrustedDomainTVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustedDomainTVCTests.swift; sourceTree = "<group>"; };
 		2EBD8455253FEDD4009BFED5 /* WebRequestBrick+CBXMLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebRequestBrick+CBXMLHandler.swift"; sourceTree = "<group>"; };
+		30DF527B7BBC2A798554E570 /* WebPostRequestBrick+CBXMLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebPostRequestBrick+CBXMLHandler.swift"; sourceTree = "<group>"; };
 		2EBD845A253FEEA1009BFED5 /* WebRequestBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestBrick.swift; sourceTree = "<group>"; };
+		B23428BBB31F352F5AFC17F3 /* WebPostRequestBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPostRequestBrick.swift; sourceTree = "<group>"; };
 		2EBD845C253FEF57009BFED5 /* WebRequestBrickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestBrickCell.swift; sourceTree = "<group>"; };
+		973DED2B7AD19921BC3D4D2D /* WebPostRequestBrickCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPostRequestBrickCell.swift; sourceTree = "<group>"; };
 		2EBD845E253FEFB6009BFED5 /* WebRequestBrick+Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WebRequestBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/WebRequestBrick+Instruction.swift"; sourceTree = "<group>"; };
+		4A8C1CB30B47181B8BF8EF4C /* WebPostRequestBrick+Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WebPostRequestBrick+Instruction.swift"; path = "PlayerEngine/Instructions/Data/WebPostRequestBrick+Instruction.swift"; sourceTree = "<group>"; };
 		2ED416A6241120AE00AFE2FD /* Tic_Tac_Toe_Master_097.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tic_Tac_Toe_Master_097.xml; sourceTree = "<group>"; };
 		2ED416A7241120AE00AFE2FD /* Tic_Tac_Toe_Master_096.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tic_Tac_Toe_Master_096.xml; sourceTree = "<group>"; };
 		2ED416A8241120AE00AFE2FD /* Tic_Tac_Toe_Master_095.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tic_Tac_Toe_Master_095.xml; sourceTree = "<group>"; };
@@ -7101,6 +7109,7 @@
 				AA74EF751BC0589700D1E954 /* SetVariableBrick+CBXMLHandler.h */,
 				AA74EF761BC0589700D1E954 /* SetVariableBrick+CBXMLHandler.m */,
 				2EBD8455253FEDD4009BFED5 /* WebRequestBrick+CBXMLHandler.swift */,
+				30DF527B7BBC2A798554E570 /* WebPostRequestBrick+CBXMLHandler.swift */,
 			);
 			name = Data;
 			path = VariableBricks;
@@ -10304,6 +10313,7 @@
 				9200C2CE1C808206002F5CA4 /* ShowTextBrick+Instruction.swift */,
 				AA74EE251BC0540D00D1E954 /* SetVariableBrick+Instruction.swift */,
 				2EBD845E253FEFB6009BFED5 /* WebRequestBrick+Instruction.swift */,
+				4A8C1CB30B47181B8BF8EF4C /* WebPostRequestBrick+Instruction.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -10445,6 +10455,7 @@
 				AA74EF991BC05B5F00D1E954 /* SetVariableBrick.h */,
 				AA74EF9A1BC05B5F00D1E954 /* SetVariableBrick.m */,
 				2EBD845A253FEEA1009BFED5 /* WebRequestBrick.swift */,
+				B23428BBB31F352F5AFC17F3 /* WebPostRequestBrick.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -10686,6 +10697,7 @@
 				AA74F0401BC05FCE00D1E954 /* SetVariableBrickCell.h */,
 				AA74F0411BC05FCE00D1E954 /* SetVariableBrickCell.m */,
 				2EBD845C253FEF57009BFED5 /* WebRequestBrickCell.swift */,
+				973DED2B7AD19921BC3D4D2D /* WebPostRequestBrickCell.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -13128,6 +13140,7 @@
 				0594CE5C275E54AE007DC3F9 /* SewUpBrick+Instruction.swift in Sources */,
 				AA74EEE41BC057B900D1E954 /* RepeatBrick+CBXMLHandler.m in Sources */,
 				2EBD845F253FEFB6009BFED5 /* WebRequestBrick+Instruction.swift in Sources */,
+				AC9F299D27E10E6C3E085A7E /* WebPostRequestBrick+Instruction.swift in Sources */,
 				4C724E5F1B4D3E8C00E27479 /* UserDataContainer+CBXMLHandler.m in Sources */,
 				E405EABB212D4E420074ADDB /* SearchStoreCell.swift in Sources */,
 				D30359E82444723D006688F5 /* GoToBrick+Instruction.swift in Sources */,
@@ -13396,6 +13409,7 @@
 				9EC5174224FBD7ED0029CD0E /* SetInstrumentBrick.swift in Sources */,
 				AA74F0CC1BC05FCE00D1E954 /* BroadcastScriptCell.m in Sources */,
 				2EBD8456253FEDD4009BFED5 /* WebRequestBrick+CBXMLHandler.swift in Sources */,
+				717E8AFCF516FE794D947AC6 /* WebPostRequestBrick+CBXMLHandler.swift in Sources */,
 				4C994E11207A3D4100C415FD /* SensorManagerProtocol.swift in Sources */,
 				59697DA8201F4D0400A0071A /* MediaItem.swift in Sources */,
 				4CF072AE20D6753D00F93AB5 /* DateYearSensor.swift in Sources */,
@@ -13791,6 +13805,7 @@
 				AA74EF541BC0586F00D1E954 /* PointInDirectionBrick+CBXMLHandler.m in Sources */,
 				4C595F4121CAE7BE0097D850 /* PlusOperator.swift in Sources */,
 				2EBD845B253FEEA1009BFED5 /* WebRequestBrick.swift in Sources */,
+				26CE5B078B568CAABBF73A7F /* WebPostRequestBrick.swift in Sources */,
 				92289A491A42F2A3008C771A /* BSKeyboardControls.m in Sources */,
 				49DB87C228A2BE2100DD1224 /* StagePresenterViewControllerOrientation.swift in Sources */,
 				4C724E231B4D3E8C00E27479 /* CBXMLSerializerHelper.m in Sources */,
@@ -13822,6 +13837,7 @@
 				49402B9128116FA2009FCBF8 /* LeftThumbKnuckleXSensor.swift in Sources */,
 				AA74F0C31BC05FCE00D1E954 /* TurnRightBrickCell.m in Sources */,
 				2EBD845D253FEF57009BFED5 /* WebRequestBrickCell.swift in Sources */,
+				0A9599FF797B35DA72AE8945 /* WebPostRequestBrickCell.swift in Sources */,
 				AA74F0A01BC05FCE00D1E954 /* IfLogicElseBrickCell.m in Sources */,
 				AA74F0A91BC05FCE00D1E954 /* SetVariableBrickCell.m in Sources */,
 				4CF0729620D66B2800F93AB5 /* ColorSensor.swift in Sources */,

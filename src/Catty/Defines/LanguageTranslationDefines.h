@@ -490,6 +490,8 @@
 #define kLocalizedHideVariable NSLocalizedString(@"Hide variable", nil)
 #define kLocalizedAt NSLocalizedString(@"at ", nil)
 #define kLocalizedSendWebRequestTo NSLocalizedString(@"Send web request to", nil)
+#define kLocalizedSendPostWebRequestTo NSLocalizedString(@"Send POST request to", nil)
+#define kLocalizedWithBody NSLocalizedString(@"with body", nil)
 #define kLocalizedAndStoreAnswerIn NSLocalizedString(@"and store answer in", nil)
 #define kLocalizedAllowWebAccess NSLocalizedString(@"Allow web access", nil)
 #define kLocalizedAlwaysAllowWebAccess NSLocalizedString(@"Always allow web access", nil)

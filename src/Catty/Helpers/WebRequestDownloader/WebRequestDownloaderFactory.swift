@@ -21,7 +21,7 @@
  */
 
 class WebRequestDownloaderFactory {
-    func create(url: String, session: URLSession? = nil, trustedDomainManager: TrustedDomainManager? = nil) -> WebRequestDownloader {
-        WebRequestDownloader(url: url, session: session, trustedDomainManager: trustedDomainManager)
+    func create(url: String, session: URLSession? = nil, trustedDomainManager: TrustedDomainManager? = nil, httpMethod: String = "GET", httpBody: String? = nil) -> WebRequestDownloader {
+        WebRequestDownloader(url: url, session: session, trustedDomainManager: trustedDomainManager, httpMethod: httpMethod, httpBody: httpBody)
     }
 }
