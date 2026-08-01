@@ -22,11 +22,14 @@
 
 extension SoundsTableViewController {
 
+    // See LooksTableViewController+MediaLibrary.swift: the native media library
+    // API is discontinued, this now just opens the replacement web page.
     @objc
     func showSoundsMediaLibrary() {
-        let viewController = MediaLibraryViewController(for: .sounds)
-        viewController.importDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let webVC = (self.storyboard?.instantiateViewController(withIdentifier: "HelpWebViewController") as? HelpWebViewController) ?? HelpWebViewController()
+        webVC.url = URL(string: "https://share.catrobat.org/app/media-library/")
+        webVC.pageTitle = kLocalizedMediaLibrary
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
 
     public func showImportAlert(itemName: String) {
