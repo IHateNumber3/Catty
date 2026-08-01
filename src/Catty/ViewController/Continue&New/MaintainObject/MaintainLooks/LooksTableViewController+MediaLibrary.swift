@@ -22,18 +22,25 @@
 
 extension LooksTableViewController {
 
+    // The Catroweb media library API is discontinued (share.catrob.at shut down,
+    // https://catrobat.org/share/). The media library now only exists as a plain
+    // web page, not something the app can browse/download from natively. Open it
+    // as a web screen instead of the old native picker.
     @objc
     func showBackgroundsMediaLibrary() {
-        let viewController = MediaLibraryViewController(for: .backgrounds)
-        viewController.importDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
+        openMediaLibraryWebPage()
     }
 
     @objc
     func showLooksMediaLibrary() {
-        let viewController = MediaLibraryViewController(for: .looks)
-        viewController.importDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
+        openMediaLibraryWebPage()
+    }
+
+    private func openMediaLibraryWebPage() {
+        let webVC = (self.storyboard?.instantiateViewController(withIdentifier: "HelpWebViewController") as? HelpWebViewController) ?? HelpWebViewController()
+        webVC.url = URL(string: "https://share.catrobat.org/app/media-library/")
+        webVC.pageTitle = kLocalizedMediaLibrary
+        self.navigationController?.pushViewController(webVC, animated: true)
     }
 
     private func showImportAlert(itemName: String) {
