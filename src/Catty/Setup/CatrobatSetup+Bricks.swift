@@ -143,6 +143,7 @@
 
         if isWebRequestBrickEnabled() {
             bricks.append(WebRequestBrick())
+            bricks.append(WebPostRequestBrick())
         }
 
         return bricks
