@@ -47,6 +47,7 @@ class WebPostRequestBrickCell: BrickCell, BrickCellProtocol {
     }
 
     override func parameters() -> [String]! {
-        NSArray.init(objects: "{FLOAT;range=(0,inf)}", "{FLOAT;range=(0,inf)}", "{VARIABLE}") as? [String]
+    ["{STRING}", "{STRING}", "{VARIABLE}"]
     }
+
 }
