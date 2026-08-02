@@ -41,6 +41,7 @@
 #import "BrickMessageProtocol.h"
 #import "BrickStaticChoiceProtocol.h"
 #import "BrickVariableProtocol.h"
+#import "BrickFormulaProtocol.h"
 #import "BrickListProtocol.h"
 #import "BrickCellLookData.h"
 #import "BrickCellSoundData.h"
@@ -276,7 +277,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
                 [self animate:indexPath brickCell:brickCell];
             }];
         }
-        if (brick.isFormulaBrick && [brick.getFormulas count] == 1) {
+        if (brick.isFormulaBrick && [(id<BrickFormulaProtocol>)brick getFormulas].count == 1) {
             [actionSheet addDefaultActionWithTitle:kLocalizedEditFormula handler:^{
                 [self openFormulaEditorForBrickCell:brickCell withEvent:nil];
             }];
