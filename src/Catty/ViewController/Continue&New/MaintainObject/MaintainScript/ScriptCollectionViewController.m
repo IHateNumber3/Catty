@@ -276,7 +276,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
                 [self animate:indexPath brickCell:brickCell];
             }];
         }
-        if (brick.isFormulaBrick) {
+        if (brick.isFormulaBrick && [brick.getFormulas count] == 1) {
             [actionSheet addDefaultActionWithTitle:kLocalizedEditFormula handler:^{
                 [self openFormulaEditorForBrickCell:brickCell withEvent:nil];
             }];
