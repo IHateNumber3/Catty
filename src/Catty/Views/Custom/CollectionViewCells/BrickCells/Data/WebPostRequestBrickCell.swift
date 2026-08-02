@@ -30,11 +30,11 @@ class WebPostRequestBrickCell: BrickCell, BrickCellProtocol {
     var variableComboBox: iOSCombobox?
 
     static func cellHeight() -> CGFloat {
-        UIDefines.brickHeight4h
+        UIDefines.brickHeight3h
     }
 
     func brickTitle(forBackground isBackground: Bool, andInsertionScreen isInsertion: Bool) -> String! {
-        kLocalizedSendPostWebRequestTo + " %@\n" + kLocalizedWithBody + " %@\n" + kLocalizedAndStoreAnswerIn + "\n%@"
+        kLocalizedSendPostWebRequestTo + " %@ " + kLocalizedWithBody + " %@\n" + kLocalizedAndStoreAnswerIn + " %@"
     }
 
     override func hookUpSubViews(_ inlineViewSubViews: [Any]!) {
@@ -47,8 +47,6 @@ class WebPostRequestBrickCell: BrickCell, BrickCellProtocol {
     }
 
     override func parameters() -> [String]! {
-    NSArray(objects: "{STRING}", "{STRING}", "{VARIABLE}") as? [String]
+        NSArray.init(objects: "{FLOAT;range=(0,inf)}", "{FLOAT;range=(0,inf)}", "{VARIABLE}") as? [String]
     }
-
-
 }
