@@ -47,7 +47,8 @@ class WebPostRequestBrickCell: BrickCell, BrickCellProtocol {
     }
 
     override func parameters() -> [String]! {
-    ["{STRING}", "{STRING}", "{VARIABLE}"]
+    NSArray(objects: "{STRING}", "{STRING}", "{VARIABLE}") as? [String]
     }
+
 
 }
