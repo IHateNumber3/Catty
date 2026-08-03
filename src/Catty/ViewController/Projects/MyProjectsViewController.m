@@ -683,10 +683,14 @@
     UIBarButtonItem *add = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                          target:self
                                                                          action:@selector(addProjectAction:)];
+    UIBarButtonItem *importButton = [[UIBarButtonItem alloc] initWithTitle:kLocalizedImport
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(importProjectAction)];
     UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                           target:self
                                                                           action:nil];
-    self.toolbarItems = @[flex, add, flex];
+    self.toolbarItems = @[importButton, flex, add, flex];
 }
 
 - (void)setupEditingToolBar
