@@ -1364,6 +1364,7 @@
 		92FF31591A24DEB300093DA7 /* DownloadTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF31341A24DEB300093DA7 /* DownloadTabBarController.m */; };
 		92FF315B1A24DEB300093DA7 /* ProjectDetailStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF31381A24DEB300093DA7 /* ProjectDetailStoreViewController.m */; };
 		92FF315F1A24DEB300093DA7 /* MyProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF31421A24DEB300093DA7 /* MyProjectsViewController.m */; };
+		7411EADCB374D94B38052089 /* MyProjectsViewController+Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC0AA90CA167F1E9FD11D9C /* MyProjectsViewController+Import.swift */; };
 		92FF31611A24DEB300093DA7 /* StagePresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF31471A24DEB300093DA7 /* StagePresenterViewController.m */; };
 		92FF325B1A24E2F400093DA7 /* BDKNotifyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF31701A24E2F400093DA7 /* BDKNotifyHUD.m */; };
 		92FF325C1A24E2F400093DA7 /* LICENSE_BDKNotifyHUD in Resources */ = {isa = PBXBuildFile; fileRef = 92FF31711A24E2F400093DA7 /* LICENSE_BDKNotifyHUD */; };
@@ -3796,6 +3797,7 @@
 		92FF31381A24DEB300093DA7 /* ProjectDetailStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailStoreViewController.m; sourceTree = "<group>"; };
 		92FF31411A24DEB300093DA7 /* MyProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProjectsViewController.h; sourceTree = "<group>"; };
 		92FF31421A24DEB300093DA7 /* MyProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProjectsViewController.m; sourceTree = "<group>"; };
+		9EC0AA90CA167F1E9FD11D9C /* MyProjectsViewController+Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyProjectsViewController+Import.swift"; sourceTree = "<group>"; };
 		92FF31461A24DEB300093DA7 /* StagePresenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StagePresenterViewController.h; sourceTree = "<group>"; };
 		92FF31471A24DEB300093DA7 /* StagePresenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagePresenterViewController.m; sourceTree = "<group>"; };
 		92FF316F1A24E2F400093DA7 /* BDKNotifyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDKNotifyHUD.h; sourceTree = "<group>"; };
@@ -9361,6 +9363,7 @@
 			children = (
 				92FF31411A24DEB300093DA7 /* MyProjectsViewController.h */,
 				92FF31421A24DEB300093DA7 /* MyProjectsViewController.m */,
+				9EC0AA90CA167F1E9FD11D9C /* MyProjectsViewController+Import.swift */,
 				5EFBD5F82145533B003B3CDC /* ProjectDescriptionViewController.swift */,
 			);
 			path = Projects;
@@ -13249,6 +13252,7 @@
 				F4E6E5C0210E1FE900D86FE6 /* RandFunction.swift in Sources */,
 				92D56C391BF2098700A54750 /* PhiroProtocol.swift in Sources */,
 				92FF315F1A24DEB300093DA7 /* MyProjectsViewController.m in Sources */,
+				7411EADCB374D94B38052089 /* MyProjectsViewController+Import.swift in Sources */,
 				BAEE49B61F165C3100F06741 /* ReplaceItemInUserListBrickCell.m in Sources */,
 				49949B3D2806EAD20073BF65 /* RightWristYSensor.swift in Sources */,
 				4C724E661B4D3EC500E27479 /* CBXMLSerializerContext.m in Sources */,
