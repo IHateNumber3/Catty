@@ -14547,7 +14547,7 @@
 					"-lxml2",
 				);
 				OTHER_SWIFT_FLAGS = "-DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode.develop;
+				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode.mod.dev;
 				PRODUCT_NAME = "Pocket Code";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Catty/Supporting Files/Catty-Bridging-Header.h";
@@ -14592,7 +14592,7 @@
 					"-lxml2",
 				);
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode;
+				PRODUCT_BUNDLE_IDENTIFIER = org.catrobat.pocketcode.mod;
 				PRODUCT_NAME = "Pocket Code";
 				PROVISIONING_PROFILE = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
